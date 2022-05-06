@@ -901,7 +901,7 @@ function Fun.Create(title)
                         if a.KeyCode.Name ~= "Unknown" then
                             keybindBtn.Text = a.KeyCode.Name
                             oldKey = a.KeyCode.Name;
-                            _G[changing] = Enum.KeyCode[oldKey]
+                            changing = Enum.KeyCode[oldKey]
                         end
                     end)
             
