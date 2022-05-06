@@ -846,7 +846,7 @@ function Fun.Create(title)
                     TextLabel.TextXAlignment = Enum.TextXAlignment.Left
                 end
 
-                function itemHandling:KeyBind(bindInfo, first, callback)
+                function itemHandling:KeyBind(bindInfo, first, changing, callback)
                     bindInfo = bindInfo or "Press the Key"
                     local oldKey = first.Name
                     callback = callback or function() end
@@ -901,7 +901,7 @@ function Fun.Create(title)
                         if a.KeyCode.Name ~= "Unknown" then
                             keybindBtn.Text = a.KeyCode.Name
                             oldKey = a.KeyCode.Name;
-                            _G.silentkeybind = Enum.KeyCode[oldKey]
+                            _G[changing] = Enum.KeyCode[oldKey]
                         end
                     end)
             
