@@ -148,6 +148,7 @@ function lib:Window(text, preset, closebind)
                     Main:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
                     uitoggled = true
                     wait(.5)
+                    ui.Enabled = false
                 else
                     Main:TweenSize(
                         UDim2.new(0, 560, 0, 319),
@@ -156,6 +157,7 @@ function lib:Window(text, preset, closebind)
                         .6,
                         true
                     )
+                    ui.Enabled = true
                     uitoggled = false
                 end
             end
@@ -1566,6 +1568,7 @@ function lib:Window(text, preset, closebind)
             local BindCorner = Instance.new("UICorner")
             local BindTitle = Instance.new("TextLabel")
             local BindText = Instance.new("TextLabel")
+            _G.returnBind = keypreset
 
             Bind.Name = "Bind"
             Bind.Parent = Tab
@@ -1615,6 +1618,8 @@ function lib:Window(text, preset, closebind)
                     if inputwait.KeyCode.Name ~= "Unknown" then
                         BindText.Text = inputwait.KeyCode.Name
                         Key = inputwait.KeyCode.Name
+                        _G.returnBind = Key
+                        print(Key)
                         binding = false
                     else
                         binding = false
