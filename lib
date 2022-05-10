@@ -1561,7 +1561,7 @@ function lib:Window(text, preset, closebind)
             )
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
-        function tabcontent:Bind(text, keypreset, callback)
+        function tabcontent:Bind(text, keypreset, changed, callback)
             local binding = false
             local Key = keypreset.Name
             local Bind = Instance.new("TextButton")
@@ -1618,7 +1618,7 @@ function lib:Window(text, preset, closebind)
                     if inputwait.KeyCode.Name ~= "Unknown" then
                         BindText.Text = inputwait.KeyCode.Name
                         Key = inputwait.KeyCode.Name
-                        keypreset = Key
+                        changed = inputwait.KeyCode
                         binding = false
                     else
                         binding = false
