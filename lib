@@ -1618,8 +1618,7 @@ function lib:Window(text, preset, closebind)
                     if inputwait.KeyCode.Name ~= "Unknown" then
                         BindText.Text = inputwait.KeyCode.Name
                         Key = inputwait.KeyCode.Name
-                        _G.returnBind = Key
-                        print(Key)
+                        keypreset = Key
                         binding = false
                     else
                         binding = false
